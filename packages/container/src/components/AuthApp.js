@@ -8,13 +8,16 @@ export default () => {
 
   useEffect(() => {
     const { onParentNavigate } = mount(ref.current, {
-      onNavigate: ({ pathname: nextPathname }) => {
-        const { pathname } = history.location;
-
-        if (pathname !== nextPathname) {
-          history.push(nextPathname);
+        initialPath: history.location.pathname,
+        onNavigate: ({ pathname: nextPathname }) => {
+            const { pathname } = history.location;
+            if (pathname !== nextPathname) {
+            history.push(nextPathname);
+            }
+        },
+        onSignIn: () => {
+          console.log('User signed in');
         }
-      },
     });
 
     history.listen(onParentNavigate);
