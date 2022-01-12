@@ -246,6 +246,7 @@
     </div>
     <div class="p-col-12 p-lg-6">
       <div class="card">
+        flaco
       </div>
     </div>
   </div>
